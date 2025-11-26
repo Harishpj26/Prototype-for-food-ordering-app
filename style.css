@@ -6,17 +6,22 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid lightgray;
+    background-color: black;
 }
 
 .logo {
-    width: 75px;
+    width: 100px;
+    height: 100px;
     padding: 10px;
+    border-radius: 50%;
+    border: 1px bold  lightgrey;
 }
 
 .nav-items>ul {
     display: flex;
     list-style: none;
     font-size: 20px;
+    color: aliceblue;
 }
 
 .nav-items>ul>li {
@@ -35,12 +40,25 @@
     width: 200px;
     padding: 10px;
     border-radius: 10px;
-    background-color: lightcyan;
+    /* background-color: rgb(187, 36, 13); */
 }
 
 .res-card:hover {
     border: 1px solid lightgrey;
     cursor: pointer;
+}
+.res-card h3,h4 {
+    padding: 3px;
+    margin: 2px;
+}
+
+.ratings {
+    background-color: rgb(78, 193, 78);
+    padding: 3px;
+    color: white;
+    border-radius: 2px;
+    display: inline-block;
+    margin-right:12px ;
 }
 
 .search {
@@ -50,4 +68,9 @@
 .res-logo {
     width: 100%;
     border-radius: 20px;
+}
+
+.filter-btn {
+    margin: 10px;
+    cursor: pointer;
 }

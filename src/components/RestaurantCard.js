@@ -16,12 +16,12 @@ const RestaurantCard = (props) => {
         <div className="res-card">
             <img
                 className="res-logo"
-                src={CDN_URL + cloudinaryImageId}
+                src={CDN_URL}
                 alt="Biryani"
             />
             <h3>{name}</h3>
             <h4>{cuisines.join(', ')}</h4>
-            <h4>{avgRating} stars</h4>
+            <h4><span className="ratings">{avgRating}</span></h4>
             <h4>₹{costForTwo / 100} FOR TWO</h4>
             <h4>{deliveryTime} minutes</h4>
         </div>

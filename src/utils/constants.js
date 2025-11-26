@@ -1,2 +1,2 @@
-export const CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/";
-export const LOGO_URL = "https://images.unsplash.com/vector-1739890612737-eac2bdd65b5c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZCUyMGFwcCUyMGxvZ298ZW58MHx8MHx8fDI%3D";
+export const CDN_URL = "https://loremflickr.com/320/240/food";
+export const LOGO_URL = "https://plus.unsplash.com/premium_photo-1675884306775-a0db978623a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHJlc3RhdXJhbnQlMjBsb2dvfGVufDB8fDB8fHww";

@@ -67,11 +67,29 @@
 .search {
     padding: 10px;
 }
+.search>button {
+   border: none;
+   background-color: white;
+}
+.search-icon {
+    height: 30px;
+    width: 30px;
+}
 
 .res-logo {
     max-height: 200px;
     width: 100%;
     border-radius: 20px;
+}
+.filter {
+    display: flex;
+}
+.search-box {
+     font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: 5px;
 }
 
 .filter-btn {
@@ -122,6 +140,43 @@
 .shimmer-line.long {
     width: 90%;
 }
+.login {
+    padding: 0 20px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes shimmer-bg {
     0% {
         background-color: #eeeeee;

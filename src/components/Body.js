@@ -1,9 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
+import { SEARCH_ICON } from "../utils/constants";
 
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
+    const [searchText,setSearchText] = useState("");
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -30,6 +33,25 @@ const Body = () => {
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
+                <div className="search">
+                    <button
+                     onClick={()=>{
+                        const filteredRestraunt =listOfRestaurants.filter((res)=>
+                             res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                        );
+                         setListOfRestaurants(filteredRestraunt);
+                    }}>
+                    <img className="search-icon" src={SEARCH_ICON} alt="search icon" width="20" height="20" />
+                    </button>
+                    <input 
+                        type="text" 
+                        className="search-box"
+                        value={searchText}
+                        onChange={(e)=> {
+                            setSearchText(e.target.value);
+                        }}
+                    />           
+                </div>
                 <button className="filter-btn" onClick={
                     () => {
                         const filteredList = listOfRestaurants.filter(

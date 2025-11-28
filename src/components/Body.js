@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
+import Shimmer from "./shimmer";
 
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -25,7 +26,8 @@ const Body = () => {
         console.log("Restaurants:", restaurants);
         setListOfRestaurants(restaurants);
     }
-    return (
+    // while restaurants array is empty (loading) show the shimmer
+    return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                 <button className="filter-btn" onClick={

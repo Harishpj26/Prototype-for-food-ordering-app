@@ -5,14 +5,16 @@ import { SEARCH_ICON } from "../utils/constants";
 
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
+    const [filteredRestraunt,setFilteredRestaraunt] = useState([]);
     const [searchText,setSearchText] = useState("");
+
 
     useEffect(() => {
         fetchData();
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch(
+         const data = await fetch(
             "https://api.allorigins.win/raw?url=" +
             encodeURIComponent(
                 "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9716&lng=77.5946"
@@ -20,15 +22,18 @@ const Body = () => {
         );
         const json = await data.json();
         //console.log(json);
-        const restaurantCard = json?.data?.cards?.find(
-            (c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants
-        );
 
-        const restaurants = restaurantCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+        //const restaurants = json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const restaurants =
+                        json?.data?.cards
+                        ?.find((c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+                        ?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+
 
         console.log("Restaurants:", restaurants);
         setListOfRestaurants(restaurants);
-    }
+        setFilteredRestaraunt(restaurants);
+    };
     // while restaurants array is empty (loading) show the shimmer
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">

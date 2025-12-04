@@ -44,7 +44,7 @@ const Body = () => {
                         const filteredRestraunt =listOfRestaurants.filter((res)=>
                              res.info.name.toLowerCase().includes(searchText.toLowerCase())
                         );
-                         setListOfRestaurants(filteredRestraunt);
+                         setFilteredRestaraunt(filteredRestraunt);
                     }}>
                     <img className="search-icon" src={SEARCH_ICON} alt="search icon" width="20" height="20" />
                     </button>
@@ -67,7 +67,7 @@ const Body = () => {
                 }>Top Rated Restaurant</button>
             </div>
             <div className="res-container">
-                {listOfRestaurants
+                {filteredRestraunt
                     .filter((res) => res.info)
                     .map((res) => (
                         <RestaurantCard key={res.info.id} resData={res.info} />
